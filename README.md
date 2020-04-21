@@ -115,6 +115,6 @@ _Which file do you update to make Ansible run the playbook on a specific machine
 
 How do I specify which machine to install the ELK server on versus which to install Filebeat on?
 - Filebeat:Because we are connecting our DVWA machines to the ELK server, we need to edit the file to include our ELK server's IP address. In the /etc/filebeat/filebeat-configuration.yml configuration file we replace the IP address with the IP address of the ELK machine.
-ELK Server: We secify a remote user (*machine's admin name) in ansible.cfg file and we list the IP address of our ELK server in hosts file.
+ELK Server: We specify a remote user (*machine's admin name) in ansible.cfg file and we list the IP address of our ELK server in hosts file.
 
 - http://104.211.41.210:5601/
