@@ -19,7 +19,7 @@ This document contains the following details:
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
-Load balancing ensures that the application will be highly distributed, in addition to restricting traffic to the network.
+Load balancing ensures that the application will be highly available, in addition to restricting traffic to the network.
 
 The primary function of a load balancer is to spread workloads across multiple servers to prevent overloading servers, optimize productivity, and maximize uptime. Load balancers also add resiliency by rerouting live traffic from one server to another if a server falls prey to DDoS attacks or otherwise becomes unavailable. In this way, load balancers help to eliminate single points of failure, reduce the attack surface, and make it harder to exhaust resources and saturate links.
 
@@ -44,21 +44,23 @@ The configuration details of each machine may be found below.
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the jump box machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses: 10.0.0.4  and 13.82.213.38
+Only the jump box machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresse: home network IP*
+
+*not listed for privacy reasons
 
 
-Machines within the network can only be accessed by SSH key.
-I allowed access from DVWA-VM1 machine to the ELK VM - 10.0.0.7
+Machines within the network can only be accessed by SSH key and by home network ip*.
 
 A summary of the access policies in place can be found in the table below.
 
-| Name       | Publicly Accessible | Allowed IP Addresses    |
-|------------|---------------------|-------------------------|
-| Jump Box   | Yes                 | 10.0.0.4 13.82.213.38   |
-| DVWA-VM1   | No                  | 10.0.0.7                |
-| DVWA-VM2   | No                  | 10.0.0.8                |
-| ELK-Server | Yes                 | 10.0.0.6 104.211.41.210 |
+| Name       | Publicly Accessible | Allowed IP Addresses                          |
+|------------|---------------------|-----------------------------------------------|
+| Jump Box   | Yes                 | home network IP*                              |
+| DVWA-VM1   | No                  | 10.0.0.4; home network IP*                    |
+| DVWA-VM2   | No                  | 10.0.0.4; 10.0.0.7; home network IP*          |
+| ELK-Server | Yes                 | 10.0.0.4; 10.0.0.7; 10.0.0.8; home network IP*|
 
+*not listed for privacy reasons
 
 ### Elk Configuration
 
