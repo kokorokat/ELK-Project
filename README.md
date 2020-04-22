@@ -20,9 +20,10 @@ This document contains the following details:
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
 Load balancing ensures that the application will be highly distributed, in addition to restricting traffic to the network.
+
 The primary function of a load balancer is to spread workloads across multiple servers to prevent overloading servers, optimize productivity, and maximize uptime. Load balancers also add resiliency by rerouting live traffic from one server to another if a server falls prey to DDoS attacks or otherwise becomes unavailable. In this way, load balancers help to eliminate single points of failure, reduce the attack surface, and make it harder to exhaust resources and saturate links.
 
-The advantage of the jump box is the ability to access devices in separate security zones, like managing a host in a DMZ from trusted networks or computers. The ability to strictly prohibit SSH log in using password, as well as making sure than only strong keys are used is another security feature and an advantage of the jump box.
+The advantage of the jump box is the ability to access devices in separate security and availability zones, like managing a host in a DMZ from trusted networks or computers. The ability to strictly prohibit SSH log in using password, as well as making sure that only strong keys are used is another security feature and an advantage of the jump box.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes in data and system logs.
 
@@ -91,30 +92,29 @@ This ELK server is configured to monitor the following machines:
 - 10.0.0.8
 
 We have installed the following Beats on these machines:
-- Elasticsearch output
-- Kibana
+- Filebeat
 
 These Beats allow us to collect the following information from each machine:
 
 Filebeat collects data about the file system. It collects log events, and forwards them either to Elasticsearch or Logstash for indexing.
-Metricbeat collects machine metrics, such as uptime. Metricbeat helps you monitor your servers and the services they host by collecting metrics from the operating system and services. Metricbeat takes the metrics and statistics that it collects and ships them to the output that you specify, such as Elasticsearch or Logstash.
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the _____ file to _____.
-- Update the _____ file to include...
+- Copy the configuration file from your Ansible container to your ELK-Server VM.
+- Update the configuration file to include the private IP of Elk-Server (10.0.0.6)
 - Run the playbook, and navigate to curl localhost/setup.phpto check that the installation worked as expected.
 
 _Which file is the playbook? Where do you copy it?_
 - The ansible-playbook command will run the contents of a playbook.yml file. The playbook file can be named anything you wish as long as it ends in .yml and it has the correct formatting. You copy it to the command: ansible-playbook my-playbook.yml
 
 _Which file do you update to make Ansible run the playbook on a specific machine? 
-- Update /etc/ansible/hosts and add remote machines to it.
+- Update /etc/ansible/filebeat-configuration.yml and add remote machines (include machine's IP's) to it.
 
 How do I specify which machine to install the ELK server on versus which to install Filebeat on?
 - Filebeat:Because we are connecting our DVWA machines to the ELK server, we need to edit the file to include our ELK server's IP address. In the /etc/filebeat/filebeat-configuration.yml configuration file we replace the IP address with the IP address of the ELK machine.
+
 ELK Server: We specify a remote user (*machine's admin name) in ansible.cfg file and we list the IP address of our ELK server in hosts file.
 
 - http://104.211.41.210:5601/
