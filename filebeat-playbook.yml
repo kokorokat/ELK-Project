@@ -14,7 +14,7 @@
     # Use copy module
   - name: Drop in filebeat.yml
     copy:
-      src: /etc/ansible/roles/filebeat.yml
+      src: /etc/ansible/roles/filebeat-playbook.yml
       dest: /etc/filebeat/filebeat.yml
 
     # Use command module
