@@ -2,7 +2,7 @@
 
 The files in this repository were used to configure the network depicted below.
 
-![Diagram](https://github.com/kokorokat/ELK-Project/tree/master/Images)
+![Diagram](https://github.com/kokorokat/ELK-Project/blob/master/Images/ELK%20Diagram.png)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the ![Filebeat-Playbook](https://github.com/kokorokat/ELK-Project/blob/master/filebeat-playbook.ymlfile) file may be used to install only certain pieces of it, such as Filebeat.
 
