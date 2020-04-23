@@ -37,7 +37,7 @@ The configuration details of each machine may be found below.
 |------------|--------------|------------|------------------|
 | Jump Box   | Gateway      | 10.0.0.4   | Linux            |
 | DVWA-VM1   | Load Balancer| 10.0.0.7   | Linux            |
-| DVWA-VM2   | Load Balancer| 10.0.0.8   | Linux            |
+| DVWA-VM2   | Web Server   | 10.0.0.8   | Linux            |
 | ELK-Server | ELK Stack    | 10.0.0.6   | Linux            |
 
 ### Access Policies
